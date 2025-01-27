@@ -8,11 +8,12 @@ package card;
  * A class that fills a magic hand of 7 cards with random Card Objects
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
- * Pratham Doshi 991759009
+ * PrathamDoshi 991759009
  * @author srinivsi
  */
+
+
 import java.util.Random;
-import java.util.Scanner;
 
 public class CardTrick {
     
@@ -34,42 +35,27 @@ public class CardTrick {
         }
 
         // Prompt the user to pick a card
-        Scanner input = new Scanner(System.in);
-        System.out.println("\nPick a card (1-13): ");
-        int number = input.nextInt();
-        System.out.println("Pick a suit (Hearts, Diamonds, Spades, Clubs): ");
-        String suit = input.next();
         
-        // Search for the user's card in magicHand
+
+        // Step 3: Add a hardcoded lucky card (2 of Clubs)
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit("Clubs");
+
+        // Check if the lucky card is in the magic hand
         boolean found = false;
         for (Card card : magicHand) {
-            if (card.getValue() == number && card.getSuit().equalsIgnoreCase(suit)) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
                 found = true;
                 break;
             }
         }
 
         if (found) {
-            System.out.println("Congratulations! Your card is in the magic hand.");
+            System.out.println("You have found the lucky card (2 of Clubs)!");
         } else {
-            System.out.println("Sorry, your card is not in the magic hand.");
+            System.out.println("The lucky card (2 of Clubs) is not in the magic hand.");
         }
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
-        }
-        
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
-        // add one luckcard hard code 2,clubs
-    Card luckyCard = new Card();
-        luckyCard.setValue(2);
-        luckyCard.setSuit("Clubs");
-
-        
-        
     }
-
 }
-    
 
