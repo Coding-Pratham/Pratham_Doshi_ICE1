@@ -43,6 +43,7 @@ public class CardTrick {
         luckyCard.setSuit("Clubs");
 
         // Check if the lucky card is in the magic hand
+        //-----
         boolean found = false;
         for (Card card : magicHand) {
             if (card.getValue() == luckyCard.getValue() && card.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
